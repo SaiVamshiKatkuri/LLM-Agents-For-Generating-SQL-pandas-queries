@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.auth-container, .upload-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  
+  input, button {
+    margin: 5px 0;
+  }
+
+
+.mat-snack-bar-container {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Success Notification */
+.mat-mdc-snack-bar-container.success-snackbar .mat-mdc-snackbar-surface {
+  background-color: #d4edda; /* Light Green Background */
+  color: #155724 !important; /* Dark Green Text */
+  border: 2px solid #28a745; /* Green Border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Failure Notification */
+.mat-mdc-snack-bar-container.error-snackbar .mat-mdc-snackbar-surface {
+  background-color: #f8d7da; /* Light Red Background */
+  color: #721c24 !important; /* Dark Red Text */
+  border: 2px solid #f44336; /* Red Border */
+  border-radius: 4px; /* Rounded corners */
+}

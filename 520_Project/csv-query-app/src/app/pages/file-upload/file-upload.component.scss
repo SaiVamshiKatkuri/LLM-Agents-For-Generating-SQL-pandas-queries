@@ -1,0 +1,411 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff; /* Ensure text color is white for better contrast */
+  height: 50px; /* Set consistent height for the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  border-bottom: black; /* Remove border since gradient adds visual separation */
+}
+
+.website-title h1 {
+  font-size: 3rem; /* Corrected spacing in 'rem' */
+  font-weight: bold; /* Make the text bold */
+  color: #333333; /* Dark gray for good contrast on white */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Softer shadow for a cleaner look */
+  line-height: 1.4; /* Adjust the line height for better readability */
+  text-align: center; /* Center the text within the parent */
+  margin: 0; /* Remove any default margin */
+  padding: 10px 20px; /* Optional padding for better spacing */
+  font-family: 'Arial', sans-serif; /* Set a clean and modern font */
+}
+
+
+/* Main Content */
+.container {
+  display: flex;
+  height:92.5%; /* Full height minus navbar */
+  width: 100%; /* Full width of the viewport */
+}
+
+.left-section,
+.right-section {
+  flex: 1; /* Both sections take up equal space (50% each) */
+  width: 50%; /* Explicitly set each section to half the width */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Push chat-section to the bottom */
+  border-right: 1px solid #ccc; /* Add a border between the sections */
+
+}
+
+.right-section {
+  background-color: #fff; /* White background for the right section */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between elements */
+}
+
+/* Chat Section at Bottom of Left Section */
+.chat-section {
+  margin-top: auto; /* Push the chat-section to the bottom */
+  padding-top: 20px; /* Add some spacing above the chat-section */
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: column; /* Stack label, textarea, and button */
+  gap: 10px; /* Add spacing between elements */
+}
+
+.chat-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+textarea {
+  width: 95%; /* Reduce width to 90% */
+  height: 60px; /* Reduce height to 60px */
+  resize: none; /* Prevent resizing */
+  padding: 6px; /* Decrease padding for a smaller look */
+  border: 1px solid #ccc; /* Keep the border for consistency */
+  border-radius: 5px; /* Keep rounded corners */
+  font-size: 0.9em; /* Slightly reduce font size */
+}
+
+.no-data-message {
+  margin-top: 5px; /* Add a small space below the heading */
+  font-size: 1rem; /* Adjust font size for better readability */
+  color: #555; /* Set a neutral color */
+}
+
+
+.mic-button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color:  #00b8cd;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.mic-button:hover {
+  background-color: #74dfeb;
+}
+
+.submit-button {
+  width: 15%; /* Reduce width to 90% */
+  padding: 10px;
+  cursor: pointer;
+  background-color:  #00b8cd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+}
+.submit-button:hover {
+  background-color: #74dfeb;
+}
+
+.submit-button:disabled {
+  background-color:  #00b8cd;
+  cursor: not-allowed;
+  opacity: 0.6; /* Fade effect */
+}
+
+/* Updated Query Options */
+.query-options-container {
+  display: flex; /* Align heading and radio buttons in a row */
+  align-items: center; /* Vertically align the heading and radio buttons */
+  gap: 20px; /* Add spacing between the heading and the radio buttons */
+}
+
+.query-options {
+  display: flex; /* Keep radio buttons inline */
+  gap: 15px; /* Add spacing between the radio buttons */
+  margin-top: -0.5rem; /* Adjust vertical alignment relative to the heading */
+}
+
+.query-options label {
+  font-size: 16px;
+  display: flex;
+  align-items: center; /* Vertically align radio buttons with their labels */
+  gap: 5px; /* Add space between the radio button and its label */
+}
+
+.query-options input[type="radio"] {
+  transform: scale(1.2); /* Increase size of the radio buttons */
+}
+
+.right-section .table-container {
+  flex: 1; /* Allow table container to expand fully in the left section */
+  overflow: auto; /* Enable both vertical and horizontal scrolling */
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  max-height: none; /* Remove height restriction */
+}
+
+/* Table container for CSV preview */
+.left-section .table-container {
+  flex: 1; /* Allow table container to expand fully in the left section */
+  overflow: auto; /* Enable both vertical and horizontal scrolling */
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  max-height: none; /* Remove height restriction */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  table-layout: auto; /* Allow columns to adjust based on content */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
+  white-space: nowrap; /* Prevent text from wrapping to fit columns horizontally */
+}
+
+thead th {
+  background-color: #f2f2f2;
+  position: sticky; /* Fix headers during vertical scrolling */
+  top: 0;
+  z-index: 1;
+}
+
+/* Header and File Info */
+h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.file-info {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* CSV Preview text */
+p {
+  margin-top: 15px;
+  font-size: 1em;
+  color: #555;
+}
+
+.query-result {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.result-table-container {
+  max-height: 630px; /* Control the height to prevent layout disruption */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Add a border for visibility */
+  margin-top: 10px; /* Space between query and table */
+  padding: 10px; /* Optional: Add padding for better aesthetics */
+  box-sizing: border-box; /* Ensure padding and border don’t affect dimensions */
+  width: 100%; /* Ensure it does not exceed its parent container */
+}
+
+h2 {
+  font-size: 1.2rem; /* Reduce the size (default is larger) */
+  font-weight: bold; /* Keep it bold (optional) */
+  margin-bottom: 15px; /* Maintain some spacing below the heading */
+  color: #333; /* Optional: Adjust color for better readability */
+}
+
+.signout-button {
+  background-color:  #00b8cd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ 
+.signout-button:hover {
+  background-color: #74dfeb;
+}
+
+// h4 {
+//   margin-top: 15px; /* Maintain some spacing below the heading */
+//   justify-content: space-between;
+//   white-space: nowrap; /* Prevent the title from wrapping */
+// }
+
+// pandas code display
+.code-container {
+  width: 100%; /* Or a fixed width if required */
+  height: 150px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  border: 1px solid #ccc; /* Optional: Add a border for clarity */
+  border-radius: 5px; /* Optional: Rounded corners */
+  background-color: #f9f9f9; /* Optional: Background color */
+  box-sizing: border-box; /* Ensures padding/border don't increase size */
+  padding: 10px;
+  
+}
+
+pre {
+  // width: 100%; /* Or a fixed width if required */
+  // height: 150px; /* Set a fixed height */
+  background-color: #f9f9f9;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 !important;
+  margin: 8 0 !important;
+
+}
+.copy-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy-button {
+  position: relative; /* Position the button inside the container */
+  padding: 5px 10px; /* Button padding */
+  background-color:  #00b8cd; /* Button background */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 14px; /* Adjust font size */
+  z-index: 10; /* Ensure the button appears above other content */
+  float: right;
+  
+}
+
+
+
+// .copy-btn {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   background: #007bff;
+//   color: #fff;
+//   border: none;
+//   border-radius: 4px;
+//   padding: 8px 12px;
+//   cursor: pointer;
+// }
+
+// .copy-btn:hover {
+//   background: #0056b3;
+// }
+
+
+.copy-button i {
+  margin-right: 5px;
+}
+
+.copy-button:hover {
+  background-color: #74dfeb;
+}
+
+
+
+// .download-btn {
+//   position: relative; /* Position the button inside the container */
+//   left: 95%; /* Adjust distance from the right */
+//   padding: 5px 10px; /* Button padding */
+//   background-color: #007bff; /* Button background */
+//   color: white; /* Button text color */
+//   border: none; /* Remove border */
+//   border-radius: 4px; /* Rounded corners */
+//   cursor: pointer; /* Pointer cursor on hover */
+//   font-size: 14px; /* Adjust font size */
+//   z-index: 10; /* Ensure the button appears above other content */
+//   display: flex;
+//     align-items: center;
+//   justify-content: center;
+  
+
+// }
+
+// .download-btn:hover {
+//   background-color: #0056b3; /* Darker green when hovered */
+// }
+
+.results-header {
+  display: flex;
+  justify-content: space-between; /* Push h4 to the left and button to the right */
+  align-items: center;            /* Vertically align the items */
+  width: 100%;                    /* Ensure the container spans the full width */
+  margin-top: 15px;               /* Maintain some spacing above */
+}
+
+.results-header h4 {
+  margin: 0;                      /* Remove default margin for consistent alignment */
+  font-size: 2rem;              /* Adjust the font size as needed */
+  color: #333;                    /* Dark gray for good readability */
+}
+
+
+.download-btn {
+  padding: 5px 10px;              /* Button padding */
+  background-color: #00b8cd;      /* Button background */
+  color: white;                   /* Button text color */
+  border: none;                   /* Remove border */
+  border-radius: 4px;             /* Rounded corners */
+  cursor: pointer;                /* Pointer cursor on hover */
+  font-size: 14px;                /* Adjust font size */
+  display: flex;                  /* Align icon within the button */
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;             /* Move the button to the left by 20px */
+}
+
+.download-btn i {
+  margin-right: 5px;              /* Space between icon and button text */
+}
+
+.download-btn:hover {
+  background-color: #74dfeb;      /* Darker color on hover */
+}
+
+
+/* Reloading Animation Container */
+.reloading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Fixed height for the spinner area */
+  margin-top: 20px;
+}
+
+/* Reloading Spinner */
+.reloading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinning Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

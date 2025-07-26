@@ -1,0 +1,42 @@
+<body>
+<!-- Navigation Bar -->
+<app-nav-bar></app-nav-bar>
+
+<div class="dashboard">
+  <h1 class="title">Your Files</h1>
+  <div class="file-grid">
+    <div
+      class="file-card"
+      *ngFor="let file of files"
+      (mouseenter)="hoveredFileId = file.file_id"
+      (mouseleave)="hoveredFileId = null"
+      (click)="openFile(file.file_id)"
+    >
+      <div class="file-icon">
+        <img src="assets/images/file-icon.png" alt="File Icon" />
+      </div>
+      <div class="file-info">
+        <h3>{{ file.filename }}</h3>
+        <p>{{ file.date | date: 'medium' }}</p>
+      </div>
+      <div
+        class="delete-icon"
+        *ngIf="hoveredFileId === file.file_id"
+        (click)="deleteFile(file.file_id, $event)"
+      >
+        ✖
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructional Overlay -->
+  <div class="upload-guide" *ngIf="showUploadGuide">
+    <p class="guide-text">No Files available. Upload a file to continue</p>
+    <div class="arrow"></div>
+  </div>
+
+  <!-- Upload Button -->
+  <button class="upload-button" (click)="fileInput.click()">Upload</button>
+  <input #fileInput type="file" hidden (change)="handleFileUpload($event)" />
+</div>
+</body>

@@ -1,0 +1,10 @@
+{
+    "filter rows where age is 21": [392, 653, 403, 409, 38, 422, 174, 52, 437, 57, 837, 73, 862, 103, 743, 107, 492, 495, 624, 625, 116, 628, 502, 121],
+    "how many people with age = 21?": 24,
+    "what was the maximum fare?": 512.3292,
+    "which cabin had the fare of 76.2917?": "D15",
+    "how many people were named John?": 52,
+    "what was the name of passenger in cabin D56?": "Beesley, Mr. Lawrence",
+    "what was the age of Sloper, Mr. William Thompson?" : 28.0,
+    "how many male people survived?": 109
+}

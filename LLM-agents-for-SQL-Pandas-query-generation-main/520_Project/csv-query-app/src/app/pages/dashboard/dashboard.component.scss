@@ -1,0 +1,178 @@
+  .body{
+    background-color: hsl(0, 76%, 57%);
+  }
+  .dashboard {
+    padding: 2rem;
+    background-color: hsl(0, 0%, 98%);
+    height: 85%;
+    overflow: hidden; /* Remove scrolling */
+  
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+  
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+  
+    .file-card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+  
+      .file-icon {
+        margin-bottom: 1rem;
+  
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+  
+      .file-info {
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 0.5rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+  
+        p {
+          font-size: 0.875rem;
+          color: #666;
+        }
+      }
+    }
+  }
+  
+  .upload-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00b8cd;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .upload-button:hover {
+    background-color: #74dfeb;
+  }
+  
+  .upload-button:focus {
+    outline: none;
+  }
+  
+ 
+  // .file-card {
+  //   position: relative;
+  //   border: 1px solid #ccc;
+  //   padding: 10px;
+  //   margin: 10px;
+  //   display: flex;
+  //   align-items: center;
+  //   cursor: pointer;
+  //   transition: box-shadow 0.3s;
+  // }
+  
+  .file-card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  // .file-icon {
+  //   margin-right: 10px;
+  // }
+  
+  // .file-info {
+  //   flex-grow: 1;
+  // }
+  
+  .delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .delete-icon:hover {
+    background-color: darkred;
+  }
+  
+
+/* Instructional Overlay */
+.upload-guide {
+  position: absolute;
+  top: 50%; /* Move the guide container to the vertical center */
+  left: 50%; /* Move the guide container to the horizontal center */
+  transform: translate(-50%, -50%); /* Center the guide container */
+  text-align: center;
+  z-index: 10; /* Ensure it appears above other content */
+}
+
+.guide-text {
+  font-size: 30px; /* Make the text slightly larger */
+  font-weight: bold; /* Emphasize the text */
+  color: #00b8cd; /* Highlighted color */
+  margin-bottom: 10px; /* Add spacing between the text and arrow */
+}
+
+// .arrow {
+//   position: relative; /* Keeps the arrow fixed relative to the viewport */
+//   bottom: 20px;    /* Distance from the bottom edge */
+//   right: 20px;     /* Distance from the right edge */
+//   width: 0;
+//   height: 0;
+//   float: right;
+//   margin-left: auto;
+//   border-left: 15px solid transparent; /* Create the left side of the arrow */
+//   border-right: 15px solid transparent; /* Create the right side of the arrow */
+//   border-top: 20px solid #00b8cd; /* Downward pointing arrow */
+//   animation: bounce 1s infinite;  /* Add bounce animation */
+// }
+
+
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Starting and ending position */
+  }
+  50% {
+    transform: translateY(-10px); /* Bouncing effect */
+  }
+}
+

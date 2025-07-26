@@ -1,0 +1,128 @@
+<div class="page-whole">
+  <!-- Website Title -->
+  <div class="website-title">
+    <h1>QueryBot</h1>
+  </div>
+  <div class="auth-container" id="rotational-container" [class.active]="isFlipped">
+    <!-- Front: Login Form -->
+    <div class="page front">
+      <!-- <div class="auth-container"> -->
+        <div class="auth-container-inner">
+          <!-- Login Section -->
+          <div class="auth-card">
+            <h3>Log In</h3>
+            <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  id="email"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                  <input
+                    [type]="showLoginPassword ? 'text' : 'password'"
+                    id="password"
+                    formControlName="password"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="eye-toggle"
+                    (click)="toggleLoginPassword()"
+                  >
+                    <i [class]="showLoginPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+          </div>
+
+          <!-- Welcome Section -->
+          <div class="auth-illustration">
+            <div class="welcome-text">
+              <h2>Welcome to Login</h2>
+              <p>Don't have an account?</p>
+              <button (click)="toggleFlip()" class="btn btn-white btn-outline-white">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <!-- Back: Registration View -->
+    <div class="page back">
+      <!-- <div class="auth-container"> -->
+        <div class="auth-container-inner">
+          <!-- Welcome Section -->
+          <div class="auth-illustration">
+            <div class="welcome-text">
+              <h2>Welcome to Register</h2>
+              <p>Join us and start your journey today!</p>
+            </div>
+            <button (click)="toggleFlip()" class="btn btn-primary">Back to Login</button>
+          </div>
+
+          <!-- Registration Section -->
+          <div class="auth-card-reg">
+            <h3>Register</h3>
+            <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email" />
+              </div>
+              <div class="form-group">
+                <label for="password">Enter Password</label>
+                <div class="password-container">
+                  <input
+                    [type]="showRegisterPassword ? 'text' : 'password'"
+                    id="password"
+                    formControlName="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                  />
+                  <button
+                    type="button"
+                    class="eye-toggle"
+                    (click)="toggleRegisterPassword()"
+                  >
+                    <i [class]="showRegisterPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <div class="password-container">
+                  <input
+                    [type]="showConfirmPassword ? 'text' : 'password'"
+                    id="confirm_password"
+                    formControlName="confirm_password"
+                    class="form-control"
+                    placeholder="Confirm password"
+                  />
+                  <button
+                    type="button"
+                    class="eye-toggle"
+                    (click)="toggleConfirmPassword()"
+                  >
+                    <i [class]="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

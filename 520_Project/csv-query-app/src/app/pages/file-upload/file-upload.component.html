@@ -1,0 +1,108 @@
+<!-- Nav bar -->
+<app-nav-bar></app-nav-bar>
+<!-- Main Content -->
+<div class="container">
+  <div class="left-section">
+    <div class="file-info" *ngIf="fileData">
+      <h3>Selected File</h3>
+      <p>{{ fileData.name }}</p>
+    </div>
+
+    <h2>CSV Preview</h2>
+    <p *ngIf="csvData.length === 0" class="no-data-message">
+      No data to display. Upload a file to preview.
+    </p>
+    <div class="table-container" *ngIf="csvData.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let col of cols">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of csvData">
+            <td *ngFor="let col of cols">{{ row[col] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+
+    <!-- Chat Section at the Bottom -->
+    <div class="chat-section">
+      <div class="chat-input">
+        <label for="textToSend">Text to send</label>
+        <textarea id="textToSend" input [(ngModel)]="query" placeholder="Type or speak your message" ></textarea>
+        
+        <!-- <button (click)="stopVoiceInput()">⛔</button> -->
+         <div class="chat-buttons">
+          <button class="mic-button" (click)="startVoiceInput()"><i class="fa fa-microphone"> </i></button>
+          <button class="submit-button" 
+            [disabled]="!query || query.trim() === ''"
+            (click)="onSubmitQuery()">Submit</button>
+         </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="query-options-container">
+      <h3>Query Options</h3>
+      <div class="query-options">
+        <label>
+          <input type="radio" name="queryType" value="Pandas" [(ngModel)]="queryType" (ngModelChange)="onQueryTypeChange($event)" />
+          Pandas
+        </label>
+        <label>
+          <input type="radio" name="queryType" value="SQL" [(ngModel)]="queryType" (ngModelChange)="onQueryTypeChange($event)" />
+          SQL
+        </label>
+      </div>
+    </div>
+
+    <div class="result-section">
+      <!-- <div *ngIf="queryType=='SQL'" class="query-result">
+        <label >Query:</label>
+        <p>{{ queryResult }}</p>
+      </div> -->
+      <div class="code-container">
+        <div>
+          <button (click)="copyCode()" class="copy-button"><i class="fa fa-copy"></i></button>
+         </div>
+         <div>
+          <pre *ngIf="queryType=='Pandas'" ><code [innerHTML]="highlightedCode" class="language-python"></code></pre>
+          <pre *ngIf="queryType=='SQL'" ><code [innerHTML]="highlightedCode" class="language-sql"></code></pre>  
+         </div>
+        
+      </div>
+
+      <div class="results-header">
+        <h4>Results</h4>
+        <button *ngIf="!isLoading && isResultTable" (click)="downloadCsv()" class="download-btn">
+          <i class="fa fa-download"></i>
+        </button>
+      </div>
+      
+      <!-- Reloading Spinner -->
+      <div id="reloading" class="reloading-container" *ngIf="isLoading">
+        <div class="reloading-spinner"></div>
+      </div>
+      
+      <div class="result-table-container" *ngIf="!isLoading && isResultTable">
+        <table *ngIf="data.length" border="1">
+          <thead>
+            <tr>
+              <th *ngFor="let header of headers">{{ header }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of data">
+              <td *ngFor="let header of headers">{{ row[header] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>    
+  </div>
+</div>

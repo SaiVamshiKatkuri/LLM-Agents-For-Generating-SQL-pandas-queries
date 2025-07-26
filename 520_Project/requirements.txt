@@ -1,0 +1,14 @@
+Flask
+boto3
+Flask-CORS
+flask_jwt_extended
+flask_classful
+requests  
+tabulate
+pytest
+pandas
+langchain
+langchain_openai
+langchain_community
+langchain_experimental
+gevent

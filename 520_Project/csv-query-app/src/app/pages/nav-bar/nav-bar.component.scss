@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #EEEEEE;
+  height: 5%; /* Set consistent height for the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #ccc; /* Adds a bottom border */
+  background-color: #EEEEEE;
+
+}
+
+.left-half {
+  display: flex;
+  align-items: left;
+  width: 50%;
+}
+
+.right-half {
+  display: flex;
+  width: 50%;
+  margin: 10px;
+}
+
+.website-title {
+  display: flex; /* Flex container to align title and logo horizontally */
+  align-items: center; /* Center-align the logo and text */
+  text-align: left;
+  margin-left: 20px; /* Pushes the button to the far right */
+}
+
+.website-title h1 {
+  font-size: 1.5rem; /* Smaller font size */
+  color: #333333; /* Dark gray for good contrast */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove padding */
+  font-family: 'Arial', sans-serif; /* Set a clean and modern font */
+  white-space: nowrap; /* Prevent the title from wrapping */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Add a subtle shadow for better visibility */
+}
+
+/* Logo Styling */
+.logo img {
+  height: 50px; /* Adjust size for better alignment */
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%; /* Optional: Makes the logo round */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Optional: Adds slight depth */
+}
+
+.signout {
+  // display: flex;
+  width: min(100px, 100%);
+  float: right;
+  margin-left: auto;
+}
+
+.signout-button {
+  background-color: #00b8cd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  float: right;
+  cursor: pointer;
+  // display: flex;
+  
+}
+.signout-button:hover {
+  background-color: #74dfeb;
+}
+
